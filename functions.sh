@@ -1,11 +1,23 @@
 #!/bin/bash
 
 pv_dflow () {
-local answer=$(curl -s https://api.dialogflow.com/v1/query?v=20150910 -H 'Content-Type: application/json' -H 'Authorization: Bearer '${dflow_api_key}'' -d '{"lang": "'"${language:0:2}"'","query": "'"$order"'","sessionId": "112784433176887711459"}' | jq -r ".result .fulfillment .speech")
-if [ -n "${answer}" ]; then
-    say "$answer"
-elif [ -z "${answer}" ]; then
-    return 0
+export GOOGLE_APPLICATION_CREDENTIALS=$(ls /home/pi/jarvis/plugins_installed/jarvis-dialogflow/*.json)
+local api="https://dialogflow.googleapis.com/v2/projects/$dflow_project_id/agent/sessions/15987058248521819724:detectIntent"
+local answer=$(
+curl -s -X POST $api \
+-H "Authorization: Bearer "$(gcloud auth application-default print-access-token) \
+-H "Content-Type: application/json; charset=utf-8" \
+--data '{
+    "queryInput": {
+		"text": {
+			"text": "'"$order"'", 
+			"languageCode": "${language:0:2}"
+		}
+	}
+}' | jq -r ".queryResult .fulfillmentText")
+if [ "$answer" != "null" ]; then
+   say "$answer"
+else
+   say "$phrase_misunderstood: $order"
 fi
 }
-

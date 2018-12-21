@@ -1,1 +1,1 @@
-dflow_api_key="" #Your dialogflow API(V1!!!) Key
+dflow_project_id="" #Your dialogflow project ID
