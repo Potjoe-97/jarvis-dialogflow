@@ -34,7 +34,7 @@ Potjoe (https://github.com/Potjoe-97)
 
 -----------------------------------------------------------
 
-  ## Description
+  # Description
 Update 21/12/2018 : Migration de dialogflow V1 API to V2 API
 
 Ce plugin vous permettra de connecter Jarvis à l'API (V2) de Dialogflow pour étendre ses capacités d'interaction.
