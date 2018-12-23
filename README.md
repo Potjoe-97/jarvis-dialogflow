@@ -55,10 +55,10 @@ Pour cette étape, veuillez suivre les instructions de la section "Getting the S
 Gardez sous la main votre fichier Json pour la suite. 
 Vous pouvez maintenant installer le plugin depuis le Jarvis store. 
 
-  #### 5 Paramétrer le SDK gcloud
+  #### 3 Paramétrer le SDK gcloud
 Cette étape est assez simple, il suffit de se laisser guider. Mais pendant l'installation, rappelez-vous de sélectionner le projet gcloud contenant votre bot dialogflow (voir étape 1). Si vous êtes perdu, vous pouvez suivre la section "Initialize the SDK" sur ce lien https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu
 
-  #### 6 Configurer le plugin
+  #### 4 Configurer le plugin
 Dernière étape, dans le fichier config.sh du plugin, copier-coller la valeur de votre Project-id, que vous avez normalement noté à l'étape 1. Puis, avant de démarrer Jarvis, déplacer votre fichier d'authentification Json dans le répertoire du plugin ~/jarvis/plugins_installed/jarvis-dialogflow/.
 
 Et voilà, c'est tout bon ! 
